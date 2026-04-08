@@ -118,6 +118,76 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .manga-n{font-family:var(--mono);font-size:38px;font-weight:700;color:var(--blue);text-shadow:0 0 16px rgba(0,180,255,0.4);line-height:1;}
 .manga-s{font-size:8px;color:var(--muted);letter-spacing:0.1em;margin-top:3px;}
 
+/* MANGA COVERS */
+.manga-cover-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;transition:transform 0.2s;}
+.manga-cover-wrap:active{transform:scale(0.95);}
+.manga-cover{width:72px;height:104px;object-fit:cover;border:1px solid var(--border);border-radius:2px;transition:border-color 0.2s;box-shadow:0 4px 12px rgba(0,0,0,0.4);}
+.manga-cover-wrap:hover .manga-cover{border-color:var(--blue);box-shadow:0 4px 16px rgba(0,180,255,0.25);}
+.manga-cover-label{font-family:var(--mono);font-size:8px;color:var(--muted);letter-spacing:0.06em;text-align:center;}
+
+/* COMIDAS */
+.food-card{background:rgba(0,0,0,0.2);border:1px solid var(--border);margin-bottom:6px;transition:border-color 0.2s;overflow:hidden;}
+.food-card.learned{border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.03);}
+.food-header{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer;-webkit-user-select:none;user-select:none;}
+.food-emoji{font-size:18px;flex-shrink:0;}
+.food-info{flex:1;min-width:0;}
+.food-name{font-size:13px;font-weight:700;letter-spacing:0.03em;}
+.food-meta{display:flex;gap:6px;margin-top:3px;flex-wrap:wrap;}
+.food-tag{font-family:var(--mono);font-size:7px;padding:2px 6px;border-radius:2px;letter-spacing:0.06em;}
+.food-tag.diff-easy{background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);color:var(--green);}
+.food-tag.diff-med{background:rgba(255,184,0,0.08);border:1px solid rgba(255,184,0,0.2);color:var(--amber);}
+.food-tag.diff-hard{background:rgba(255,58,58,0.08);border:1px solid rgba(255,58,58,0.2);color:var(--red);}
+.food-tag.time{background:rgba(0,0,0,0.3);border:1px solid var(--border);color:var(--muted);}
+.food-check{width:22px;height:22px;border:1px solid var(--muted);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;transition:all 0.2s;cursor:pointer;}
+.food-check.done{border-color:var(--green);background:var(--green-d);color:var(--green);}
+.food-body{display:none;padding:0 12px 12px;border-top:1px solid var(--border);}
+.food-body.open{display:block;}
+.food-portions{display:flex;gap:6px;margin:10px 0 8px;}
+.food-portion-btn{flex:1;padding:5px;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--font);font-weight:700;font-size:10px;letter-spacing:0.08em;cursor:pointer;text-transform:uppercase;transition:all 0.15s;}
+.food-portion-btn.active{border-color:var(--blue);color:var(--blue);background:var(--blue-d);}
+.food-ingredients{margin-bottom:8px;}
+.food-ing-title{font-size:8px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.food-ing-item{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:11px;}
+.food-ing-item:last-child{border:none;}
+.food-ing-name{color:var(--text);}
+.food-ing-qty{font-family:var(--mono);font-size:10px;color:var(--blue);}
+.food-steps-title{font-size:8px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin:8px 0 6px;}
+.food-step{display:flex;gap:8px;margin-bottom:6px;}
+.food-step-n{font-family:var(--mono);font-size:9px;color:var(--amber);flex-shrink:0;margin-top:1px;}
+.food-step-txt{font-size:11px;line-height:1.5;color:var(--text);}
+
+/* GUGAY */
+.gugay-locked{display:block;}
+.gugay-locked.unlocked{display:none;}
+.gugay-content{display:none;}
+.gugay-content.unlocked{display:block;}
+.gugay-pin-row{display:flex;gap:8px;justify-content:center;margin:8px 0;}
+.gugay-pin-dot{width:14px;height:14px;border-radius:50%;border:1px solid var(--muted);background:transparent;transition:all 0.2s;}
+.gugay-pin-dot.filled{background:var(--green);border-color:var(--green);box-shadow:0 0 6px rgba(0,255,136,0.5);}
+.gugay-pin-dot.error{background:var(--red);border-color:var(--red);}
+.gugay-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;}
+.gugay-stat{background:rgba(0,0,0,0.3);border:1px solid var(--border);padding:8px 10px;text-align:center;}
+.gugay-stat-l{font-size:7px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;}
+.gugay-stat-v{font-family:var(--mono);font-size:16px;font-weight:700;}
+.gugay-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:10px;}
+.gugay-cal-head{font-family:var(--mono);font-size:7px;color:var(--muted);text-align:center;padding:2px 0;}
+.gugay-cal-day{font-family:var(--mono);font-size:8px;text-align:center;padding:5px 2px;border-radius:2px;color:var(--muted);border:1px solid transparent;}
+.gugay-cal-day.has-corre{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.3);color:var(--green);font-weight:700;}
+.gugay-cal-day.today{border-color:var(--blue);color:var(--blue);}
+.gugay-cal-day.empty{opacity:0;}
+.gugay-corre-list{display:flex;flex-direction:column;gap:4px;margin-top:8px;max-height:200px;overflow-y:auto;}
+.gugay-corre-item{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);}
+.gugay-corre-date{font-family:var(--mono);font-size:9px;color:var(--muted);}
+.gugay-corre-details{display:flex;gap:8px;align-items:center;}
+.gugay-corre-g{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--green);}
+.gugay-corre-r{font-family:var(--mono);font-size:10px;color:var(--amber);}
+.gugay-add-form{background:rgba(0,0,0,0.2);border:1px solid var(--border);padding:10px 12px;margin-bottom:8px;}
+.gugay-add-title{font-size:9px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
+.gugay-month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.gugay-month-label{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--text);letter-spacing:0.08em;}
+.gugay-nav-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:12px;width:28px;height:28px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+.gugay-nav-btn:hover{border-color:var(--green);color:var(--green);}
+
 .iitem{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
 .iitem:last-child{border:none;}
 .ileft{display:flex;align-items:center;gap:7px;}
@@ -383,6 +453,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
   <button class="tab" onclick="switchTab('travel',this)">✈️ Viagens</button>
   <button class="tab" onclick="switchTab('jobs',this)">💼 Emprego</button>
   <button class="tab" onclick="switchTab('invest',this)">🔒 Invest</button>
+  <button class="tab" onclick="switchTab('food',this)">🍳 Comer</button>
+  <button class="tab" onclick="switchTab('gugay',this)">🌿 Gugay</button>
 </div>
 
 <!-- ═══ STATUS ═══ -->
@@ -446,17 +518,39 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       </div>
     </div>
 
-    <div class="panel">
-      <div class="ph"><div class="pi">📖</div><div class="pt blue">Mangas</div></div>
-      <div class="pb">
-        <div class="srow">
-          <div class="slabel"><span class="sname">2026</span><span class="sval blue" id="manga-d">2/24</span></div>
-          <div class="btrack"><div class="bfill blue" id="manga-b" style="width:8%"></div></div>
-          <div style="font-family:var(--mono);font-size:8px;color:var(--muted);margin-top:3px;" id="manga-p">8% da meta</div>
+    <div class="panel" id="manga-panel">
+      <div class="ph" style="cursor:pointer;" onclick="toggleMangaExpand()">
+        <div class="pi">📖</div>
+        <div class="pt blue">Mangás</div>
+        <div style="font-family:var(--mono);font-size:9px;color:var(--blue);margin-left:6px;" id="manga-count-badge">2/24</div>
+        <div style="margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--muted);" id="manga-chevron">▼</div>
+      </div>
+      <div class="pb" style="padding:8px 12px;">
+        <!-- CAPAS — sempre visíveis -->
+        <div style="display:flex;gap:8px;justify-content:center;align-items:flex-end;">
+          <div class="manga-cover-wrap" onclick="toggleMangaExpand()">
+            <img class="manga-cover" src="https://cdn.myanimelist.net/images/manga/3/210091.jpg" alt="JJK" title="Jujutsu Kaisen">
+            <div class="manga-cover-label">JJK</div>
+          </div>
+          <div class="manga-cover-wrap" onclick="toggleMangaExpand()">
+            <img class="manga-cover" src="https://cdn.myanimelist.net/images/manga/1/260516.jpg" alt="JJK Modulo" title="JJK: Modulo">
+            <div class="manga-cover-label">JJK Módulo</div>
+          </div>
+          <div class="manga-cover-wrap" onclick="toggleMangaExpand()">
+            <img class="manga-cover" src="https://cdn.myanimelist.net/images/manga/1/211141.jpg" alt="HxH" title="Hunter x Hunter">
+            <div class="manga-cover-label">HxH</div>
+          </div>
         </div>
-        <div class="manga-big"><div class="manga-n" id="manga-big">2</div><div class="manga-s">volumes lidos</div></div>
-        <div class="ez" id="ez-manga">
-          <div class="erow"><input class="sinput" id="i-manga" type="number" value="2"><button class="sbtn" onclick="updateManga()">Salvar</button><button class="sbtn" onclick="addManga()">+1</button></div>
+        <!-- DETALHES — expandem ao clicar -->
+        <div id="manga-expanded" style="display:none;margin-top:10px;">
+          <div class="srow">
+            <div class="slabel"><span class="sname">2026</span><span class="sval blue" id="manga-d">2/24</span></div>
+            <div class="btrack"><div class="bfill blue" id="manga-b" style="width:8%"></div></div>
+            <div style="font-family:var(--mono);font-size:8px;color:var(--muted);margin-top:3px;" id="manga-p">8% da meta</div>
+          </div>
+          <div class="ez" id="ez-manga">
+            <div class="erow"><input class="sinput" id="i-manga" type="number" value="2"><button class="sbtn" onclick="updateManga()">Salvar</button><button class="sbtn" onclick="addManga()">+1</button></div>
+          </div>
         </div>
       </div>
     </div>
@@ -762,7 +856,118 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
   </div>
 </div>
 
-<div class="footer">[ SHADOW MONARCH SYSTEM · v2.1 · 2026 ]</div>
+<!-- ═══ COMIDAS ═══ -->
+<div id="tab-food" class="tab-content">
+  <div class="panel">
+    <div class="ph"><div class="pi">🍳</div><div class="pt green">Receitas Aprendidas</div>
+      <div style="margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--muted);" id="food-progress">0/11</div>
+    </div>
+    <div class="pb" style="padding:6px 12px 10px;">
+      <div class="btrack" style="margin-bottom:4px;"><div class="bfill green" id="food-bar" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div id="food-list"></div>
+</div>
+
+<!-- ═══ GUGAY ═══ -->
+<div id="tab-gugay" class="tab-content">
+  <!-- LOCKED -->
+  <div class="gugay-locked" id="gugay-locked">
+    <div class="panel">
+      <div class="ph"><div class="pi">🌿</div><div class="pt green">Gugay · Area Restrita</div></div>
+      <div class="pb inv-lock">
+        <div class="inv-lock-icon">🔐</div>
+        <div class="inv-lock-title">INSIRA O PIN</div>
+        <div class="gugay-pin-row" id="gugay-pin-dots">
+          <div class="gugay-pin-dot" id="gd0"></div>
+          <div class="gugay-pin-dot" id="gd1"></div>
+          <div class="gugay-pin-dot" id="gd2"></div>
+          <div class="gugay-pin-dot" id="gd3"></div>
+        </div>
+        <div class="inv-numpad">
+          <button class="inv-key" onclick="gugayPinKey('1')">1</button>
+          <button class="inv-key" onclick="gugayPinKey('2')">2</button>
+          <button class="inv-key" onclick="gugayPinKey('3')">3</button>
+          <button class="inv-key" onclick="gugayPinKey('4')">4</button>
+          <button class="inv-key" onclick="gugayPinKey('5')">5</button>
+          <button class="inv-key" onclick="gugayPinKey('6')">6</button>
+          <button class="inv-key" onclick="gugayPinKey('7')">7</button>
+          <button class="inv-key" onclick="gugayPinKey('8')">8</button>
+          <button class="inv-key" onclick="gugayPinKey('9')">9</button>
+          <div class="inv-key empty"></div>
+          <button class="inv-key" onclick="gugayPinKey('0')">0</button>
+          <button class="inv-key del" onclick="gugayPinDel()">⌫</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNLOCKED -->
+  <div class="gugay-content" id="gugay-content">
+    <button class="inv-logout" onclick="lockGugay()">[ BLOQUEAR ]</button>
+
+    <!-- RESUMO DO MÊS -->
+    <div class="panel">
+      <div class="ph">
+        <div class="pi">📊</div>
+        <div class="pt green">Resumo Mensal</div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:6px;">
+          <button class="gugay-nav-btn" onclick="gugayChangeMonth(-1)">‹</button>
+          <div class="gugay-month-label" id="gugay-month-label">Abr 2026</div>
+          <button class="gugay-nav-btn" onclick="gugayChangeMonth(1)">›</button>
+        </div>
+      </div>
+      <div class="pb">
+        <div class="gugay-stats">
+          <div class="gugay-stat"><div class="gugay-stat-l">Corres</div><div class="gugay-stat-v" style="color:var(--green);" id="g-corres">0</div></div>
+          <div class="gugay-stat"><div class="gugay-stat-l">Total (g)</div><div class="gugay-stat-v" style="color:var(--blue);" id="g-gramas">0g</div></div>
+          <div class="gugay-stat"><div class="gugay-stat-l">Gasto</div><div class="gugay-stat-v" style="color:var(--amber);" id="g-gasto">R$0</div></div>
+          <div class="gugay-stat"><div class="gugay-stat-l">R$/g média</div><div class="gugay-stat-v" style="color:var(--purple);" id="g-pgrama">—</div></div>
+        </div>
+        <!-- CALENDÁRIO -->
+        <div style="font-size:8px;color:var(--muted);letter-spacing:0.1em;margin-bottom:6px;">CALENDÁRIO</div>
+        <div class="gugay-cal">
+          <div class="gugay-cal-head">D</div><div class="gugay-cal-head">S</div><div class="gugay-cal-head">T</div><div class="gugay-cal-head">Q</div><div class="gugay-cal-head">Q</div><div class="gugay-cal-head">S</div><div class="gugay-cal-head">S</div>
+          <div id="gugay-cal-days" style="display:contents;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD CORRE -->
+    <div class="panel">
+      <div class="ph"><div class="pi">➕</div><div class="pt green">Novo Corre</div></div>
+      <div class="pb">
+        <div class="gugay-add-form" style="border:none;padding:0;background:transparent;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+            <div>
+              <div style="font-size:8px;color:var(--muted);letter-spacing:0.1em;margin-bottom:3px;">DATA</div>
+              <input class="sinput" id="g-data" type="date" style="width:100%;color-scheme:dark;">
+            </div>
+            <div>
+              <div style="font-size:8px;color:var(--muted);letter-spacing:0.1em;margin-bottom:3px;">GRAMAS</div>
+              <input class="sinput" id="g-gramas-input" type="number" step="0.5" min="0" placeholder="ex: 1.5" style="width:100%;">
+            </div>
+          </div>
+          <div style="margin-bottom:8px;">
+            <div style="font-size:8px;color:var(--muted);letter-spacing:0.1em;margin-bottom:3px;">VALOR TOTAL (R$)</div>
+            <input class="sinput" id="g-valor" type="number" min="0" placeholder="ex: 40" style="width:100%;">
+          </div>
+          <button class="sbtn green" style="width:100%;padding:8px;font-size:12px;" onclick="gugayAddCorre()">⚡ REGISTRAR CORRE</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTÓRICO -->
+    <div class="panel">
+      <div class="ph"><div class="pi">📋</div><div class="pt blue">Histórico do Mês</div></div>
+      <div class="pb">
+        <div class="gugay-corre-list" id="gugay-hist"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">[ SHADOW MONARCH SYSTEM · v2.2 · 2026 ]</div>
 </div>
 
 <script>
@@ -881,7 +1086,8 @@ function renderDate() {
 function switchTab(t, el) {
   document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-  document.getElementById('tab-' + t).classList.add('active');
+  const target = document.getElementById('tab-' + t);
+  if (target) target.classList.add('active');
   el.classList.add('active');
 }
 
@@ -1017,13 +1223,28 @@ function addGym() { state.gymTotal++; state.gymMes++; state.gymSem++; document.g
 
 function renderManga() {
   const pct = Math.min(100, Math.round((state.mangaCount / 24) * 100));
-  document.getElementById('manga-d').textContent = state.mangaCount + '/24';
-  document.getElementById('manga-b').style.width = pct + '%';
-  document.getElementById('manga-p').textContent = pct + '% da meta';
-  document.getElementById('manga-big').textContent = state.mangaCount;
+  const d = document.getElementById('manga-d');
+  const b = document.getElementById('manga-b');
+  const p = document.getElementById('manga-p');
+  const badge = document.getElementById('manga-count-badge');
+  if(d) d.textContent = state.mangaCount + '/24';
+  if(b) b.style.width = pct + '%';
+  if(p) p.textContent = pct + '% da meta';
+  if(badge) badge.textContent = state.mangaCount + '/24';
+  // sync input
+  const inp = document.getElementById('i-manga');
+  if(inp) inp.value = state.mangaCount;
+}
+function toggleMangaExpand() {
+  const exp = document.getElementById('manga-expanded');
+  const chev = document.getElementById('manga-chevron');
+  if (!exp) return;
+  const open = exp.style.display === 'block';
+  exp.style.display = open ? 'none' : 'block';
+  if (chev) chev.textContent = open ? '▼' : '▲';
 }
 function updateManga() { state.mangaCount = parseInt(document.getElementById('i-manga').value) || 0; renderManga(); save(); }
-function addManga() { state.mangaCount++; document.getElementById('i-manga').value = state.mangaCount; renderManga(); save(); notif('[ MANGA ] +1 volume!'); }
+function addManga() { state.mangaCount++; renderManga(); save(); notif('[ MANGA ] +1 volume!'); }
 
 function renderInvest() {
   const v = state.investVal, pct = Math.min(100, Math.round((v / 1000000) * 100));
@@ -1652,7 +1873,305 @@ function initGlobe() {
 }
 
 // ═══════════════════════════════════════════════════════════
-// INIT
+// COMIDAS
+// ═══════════════════════════════════════════════════════════
+const RECIPES = [
+  {
+    id:'carbonara', name:'Carbonara', emoji:'🍝', diff:'med', time:'20min',
+    ing1:[{n:'Spaghetti',q:'100g'},{n:'Guanciale / Pancetta',q:'80g'},{n:'Gema de ovo',q:'2un'},{n:'Pecorino Romano',q:'40g'},{n:'Pimenta preta',q:'a gosto'},{n:'Sal',q:'a gosto'}],
+    ing2:[{n:'Spaghetti',q:'200g'},{n:'Guanciale / Pancetta',q:'160g'},{n:'Gema de ovo',q:'4un'},{n:'Pecorino Romano',q:'80g'},{n:'Pimenta preta',q:'a gosto'},{n:'Sal',q:'a gosto'}],
+    steps:['Cozinhe o macarrão em água bem salgada até al dente. Reserve 1 xícara da água do cozimento.','Frite o guanciale em frigideira fria sem óleo até dourar e soltar a gordura. Reserve a gordura.','Misture as gemas com o queijo ralado e pimenta. Mexa até virar um creme.','Escorra o macarrão e jogue na frigideira com a gordura do guanciale (fora do fogo!).','Adicione o creme de ovo e mexa rápido, jogando água do macarrão aos poucos para criar a cremosidade. Nunca deixe o ovo cozinhar — tem que ser fora do fogo.','Finalize com guanciale, mais queijo e pimenta.']
+  },
+  {
+    id:'cacio', name:'Cacio e Pepe', emoji:'🧀', diff:'hard', time:'20min',
+    ing1:[{n:'Spaghetti ou Tonnarelli',q:'100g'},{n:'Pecorino Romano',q:'50g'},{n:'Parmesão',q:'20g'},{n:'Pimenta preta moída na hora',q:'1 colher chá'},{n:'Sal',q:'a gosto'}],
+    ing2:[{n:'Spaghetti ou Tonnarelli',q:'200g'},{n:'Pecorino Romano',q:'100g'},{n:'Parmesão',q:'40g'},{n:'Pimenta preta moída na hora',q:'2 colheres chá'},{n:'Sal',q:'a gosto'}],
+    steps:['Cozinhe o macarrão em pouca água salgada (mais concentrada). Reserve bastante água do cozimento.','Torre a pimenta em frigideira seca por 30s. Adicione meia concha da água do macarrão e deixe reduzir.','Rale os queijos fino e misture com água morna até virar uma pasta.','Escorra o macarrão e jogue na frigideira com a pimenta, fora do fogo.','Adicione a pasta de queijo e água aos poucos, mexendo até emulsionar. A técnica é tudo aqui — paciência.','Sirva imediatamente com mais pimenta por cima.']
+  },
+  {
+    id:'aglio', name:'Aglio e Olio', emoji:'🧄', diff:'easy', time:'15min',
+    ing1:[{n:'Spaghetti',q:'100g'},{n:'Alho',q:'4 dentes'},{n:'Azeite extra virgem',q:'60ml'},{n:'Pimenta vermelha seca',q:'1un'},{n:'Salsinha',q:'a gosto'},{n:'Sal',q:'a gosto'}],
+    ing2:[{n:'Spaghetti',q:'200g'},{n:'Alho',q:'8 dentes'},{n:'Azeite extra virgem',q:'120ml'},{n:'Pimenta vermelha seca',q:'2un'},{n:'Salsinha',q:'a gosto'},{n:'Sal',q:'a gosto'}],
+    steps:['Cozinhe o macarrão em água bem salgada. Reserve água do cozimento.','Fatie o alho fino. Em frigideira com azeite em fogo baixo, doure o alho devagar — não pode queimar.','Adicione a pimenta seca. Quando o alho estiver levemente dourado, apague o fogo.','Escorra o macarrão e jogue na frigideira. Adicione água do cozimento e mexa bem.','Finalize com salsinha picada e azeite cru por cima.']
+  },
+  {
+    id:'risoto', name:'Risoto de Funghi', emoji:'🍄', diff:'med', time:'35min',
+    ing1:[{n:'Arroz arbóreo',q:'80g'},{n:'Funghi secchi',q:'15g'},{n:'Caldo de legumes',q:'500ml'},{n:'Cebola',q:'½un'},{n:'Vinho branco seco',q:'50ml'},{n:'Manteiga',q:'30g'},{n:'Parmesão ralado',q:'30g'},{n:'Azeite',q:'1 fio'},{n:'Sal e pimenta',q:'a gosto'}],
+    ing2:[{n:'Arroz arbóreo',q:'160g'},{n:'Funghi secchi',q:'30g'},{n:'Caldo de legumes',q:'1L'},{n:'Cebola',q:'1un'},{n:'Vinho branco seco',q:'100ml'},{n:'Manteiga',q:'60g'},{n:'Parmesão ralado',q:'60g'},{n:'Azeite',q:'1 fio'},{n:'Sal e pimenta',q:'a gosto'}],
+    steps:['Hidrate o funghi em 200ml de água quente por 20min. Coe e reserve a água (vai no caldo).','Refogue a cebola em azeite e metade da manteiga até ficar transparente.','Adicione o arroz e toste por 2min mexendo. Adicione o vinho e mexa até evaporar.','Adicione o funghi picado. Vá adicionando o caldo quente concha a concha, sempre mexendo, esperando absorver antes de adicionar mais.','Após ~18min, o arroz deve estar al dente. Tire do fogo.','Manteiga fria + parmesão: mexa vigoroso até emulsionar (mantecatura). Acerte o sal e sirva.']
+  },
+  {
+    id:'strog', name:'Strogonoff de Carne', emoji:'🥩', diff:'easy', time:'30min',
+    ing1:[{n:'Filé mignon ou alcatra',q:'200g'},{n:'Cebola',q:'½un'},{n:'Alho',q:'2 dentes'},{n:'Mostarda Dijon',q:'1 colher sopa'},{n:'Catchup',q:'1 colher sopa'},{n:'Creme de leite',q:'100ml'},{n:'Conhaque (opcional)',q:'30ml'},{n:'Manteiga',q:'15g'},{n:'Sal e pimenta',q:'a gosto'}],
+    ing2:[{n:'Filé mignon ou alcatra',q:'400g'},{n:'Cebola',q:'1un'},{n:'Alho',q:'4 dentes'},{n:'Mostarda Dijon',q:'2 colheres sopa'},{n:'Catchup',q:'2 colheres sopa'},{n:'Creme de leite',q:'200ml'},{n:'Conhaque (opcional)',q:'60ml'},{n:'Manteiga',q:'30g'},{n:'Sal e pimenta',q:'a gosto'}],
+    steps:['Corte a carne em tiras finas. Tempere com sal e pimenta.','Em frigideira quente com manteiga, sele a carne rapidamente em fogo alto. Reserve.','Na mesma frigideira, refogue cebola e alho até dourar.','Adicione conhaque e deixe evaporar. Adicione mostarda e catchup, mexa.','Volte a carne para a frigideira. Adicione o creme de leite e mexa até encorpar.','Sirva com arroz branco e batata palha.']
+  },
+  {
+    id:'omelete', name:'Omelete Francesa', emoji:'🥚', diff:'med', time:'5min',
+    ing1:[{n:'Ovos',q:'3un'},{n:'Manteiga',q:'15g'},{n:'Sal',q:'a gosto'},{n:'Ciboulette (opcional)',q:'a gosto'}],
+    ing2:[{n:'Ovos',q:'6un'},{n:'Manteiga',q:'30g'},{n:'Sal',q:'a gosto'},{n:'Ciboulette (opcional)',q:'a gosto'}],
+    steps:['Quebre os ovos numa tigela. Adicione sal e bata com garfo até integrar — não precisa espumar.','Frigideira antiaderente em fogo médio-alto. Manteiga até espumar mas sem dourar.','Despeje os ovos. Com a espátula, mexa fazendo movimentos rápidos do centro para fora enquanto sacode a frigideira.','Quando ainda cremoso por cima, pare de mexer e deixe firmar a base por 10s.','Enrole a omelete dobrando a borda para o centro. Vire no prato. Deve ficar amarela — sem dourar.','Finalize com ciboulette e manteiga por cima.']
+  },
+  {
+    id:'ovos', name:'Ovos Mexidos Cremosos', emoji:'🍳', diff:'easy', time:'8min',
+    ing1:[{n:'Ovos',q:'3un'},{n:'Manteiga',q:'20g'},{n:'Creme de leite',q:'1 colher sopa'},{n:'Sal',q:'a gosto'},{n:'Cebolinha',q:'a gosto'}],
+    ing2:[{n:'Ovos',q:'6un'},{n:'Manteiga',q:'40g'},{n:'Creme de leite',q:'2 colheres sopa'},{n:'Sal',q:'a gosto'},{n:'Cebolinha',q:'a gosto'}],
+    steps:['Quebre os ovos direto na frigideira fria com a manteiga. Não bata antes.','Leve ao fogo médio-baixo. Mexa devagar com espátula de silicone, raspando o fundo.','A técnica do Gordon: tire do fogo a cada 30s, mexa, volte ao fogo. Repita 3-4x.','Quando ainda brilhante e levemente cru por cima, tire do fogo definitivamente.','Adicione o creme de leite, sal e mexa fora do fogo até incorporar.','Sirva imediatamente em torrada. Cebolinha por cima.']
+  },
+  {
+    id:'smash', name:'Hambúrguer Smash', emoji:'🍔', diff:'easy', time:'15min',
+    ing1:[{n:'Carne moída (80/20)',q:'150g'},{n:'Fatia de queijo americano',q:'1un'},{n:'Pão de hambúrguer',q:'1un'},{n:'Manteiga',q:'10g'},{n:'Sal grosso',q:'a gosto'},{n:'Pimenta preta',q:'a gosto'}],
+    ing2:[{n:'Carne moída (80/20)',q:'300g'},{n:'Fatia de queijo americano',q:'2un'},{n:'Pão de hambúrguer',q:'2un'},{n:'Manteiga',q:'20g'},{n:'Sal grosso',q:'a gosto'},{n:'Pimenta preta',q:'a gosto'}],
+    steps:['Faça bolinhas com a carne. NÃO tempere antes — o sal vai amolecer a carne.','Frigideira de ferro ou aço inox em fogo MUITO alto por 3-4min. Tem que estar absurdamente quente.','Coloque a bolinha na frigideira, pressione com espátula por 10s com força. Ela tem que grudar.','Tempere com sal grosso e pimenta. Deixe dourar 1-2min SEM mexer.','Raspe com a espátula e vire. Coloque o queijo imediatamente.','Monte o pão com manteiga tostada. Molho, cebola, pepino — o que quiser.']
+  },
+  {
+    id:'camarao', name:'Macarrão com Camarão ao Alho', emoji:'🦐', diff:'med', time:'25min',
+    ing1:[{n:'Linguine ou spaghetti',q:'100g'},{n:'Camarão médio limpo',q:'120g'},{n:'Alho',q:'4 dentes'},{n:'Azeite extra virgem',q:'50ml'},{n:'Limão',q:'½un'},{n:'Salsinha',q:'a gosto'},{n:'Pimenta dedo-de-moça',q:'½un'},{n:'Sal',q:'a gosto'}],
+    ing2:[{n:'Linguine ou spaghetti',q:'200g'},{n:'Camarão médio limpo',q:'240g'},{n:'Alho',q:'8 dentes'},{n:'Azeite extra virgem',q:'100ml'},{n:'Limão',q:'1un'},{n:'Salsinha',q:'a gosto'},{n:'Pimenta dedo-de-moça',q:'1un'},{n:'Sal',q:'a gosto'}],
+    steps:['Cozinhe o macarrão até al dente. Reserve água do cozimento.','Tempere o camarão com sal e limão. Em frigideira quente com azeite, grelhe 1min cada lado. Reserve.','Na mesma frigideira em fogo médio, doure o alho fatiado com a pimenta.','Adicione uma concha de água do macarrão e mexa para emulsionar.','Adicione o macarrão e o camarão. Mexa bem, ajuste o sal.','Finalize com salsinha, raspas de limão e azeite cru.']
+  },
+  {
+    id:'rosti', name:'Batata Rösti', emoji:'🥔', diff:'med', time:'30min',
+    ing1:[{n:'Batata',q:'250g'},{n:'Manteiga',q:'30g'},{n:'Sal',q:'a gosto'},{n:'Pimenta preta',q:'a gosto'},{n:'Tomilho fresco (opcional)',q:'a gosto'}],
+    ing2:[{n:'Batata',q:'500g'},{n:'Manteiga',q:'60g'},{n:'Sal',q:'a gosto'},{n:'Pimenta preta',q:'a gosto'},{n:'Tomilho fresco (opcional)',q:'a gosto'}],
+    steps:['Ralle a batata crua no ralo grosso. Esprema bem com pano de prato para tirar TODA a água — é o segredo.','Tempere com sal e pimenta.','Derreta a manteiga em frigideira antiaderente em fogo médio.','Adicione a batata em camada uniforme. Pressione bem com espátula.','Cozinhe 8-10min sem mexer até dourar embaixo. Vire (use um prato para ajudar).','Mais manteiga e mais 8min do outro lado. Deve sair crocante por fora e macio por dentro.']
+  },
+  {
+    id:'crepe', name:'Crepe Doce', emoji:'🥞', diff:'easy', time:'20min',
+    ing1:[{n:'Farinha de trigo',q:'60g'},{n:'Leite',q:'150ml'},{n:'Ovo',q:'1un'},{n:'Manteiga derretida',q:'10g'},{n:'Açúcar',q:'10g'},{n:'Pitada de sal',q:'1 pitada'}],
+    ing2:[{n:'Farinha de trigo',q:'120g'},{n:'Leite',q:'300ml'},{n:'Ovo',q:'2un'},{n:'Manteiga derretida',q:'20g'},{n:'Açúcar',q:'20g'},{n:'Pitada de sal',q:'1 pitada'}],
+    steps:['Misture todos os ingredientes no liquidificador ou com fouet até liso. Deixe descansar 15min.','Frigideira antiaderente quente com pouquíssima manteiga.','Despeje uma concha pequena e espalhe rodando a frigideira rapidamente.','Cozinhe ~1min até as bordas soltar. Vire com espátula.','30s do outro lado.','Recheie com Nutella, banana e mel. Ou só manteiga com açúcar — clássico.']
+  },
+];
+
+function initFoodState() {
+  if (!state.food) state.food = {};
+  RECIPES.forEach(r => { if (state.food[r.id] === undefined) state.food[r.id] = false; });
+}
+
+const foodPortions = {};
+
+function renderFood() {
+  initFoodState();
+  const list = document.getElementById('food-list');
+  if (!list) return;
+  const learned = Object.values(state.food).filter(Boolean).length;
+  const bar = document.getElementById('food-bar');
+  const prog = document.getElementById('food-progress');
+  if (bar) bar.style.width = Math.round((learned / RECIPES.length) * 100) + '%';
+  if (prog) prog.textContent = learned + '/' + RECIPES.length;
+
+  list.innerHTML = '';
+  RECIPES.forEach(r => {
+    const done = state.food[r.id];
+    if (!foodPortions[r.id]) foodPortions[r.id] = 1;
+    const p = foodPortions[r.id];
+    const ings = p === 1 ? r.ing1 : r.ing2;
+    const diffClass = {easy:'diff-easy', med:'diff-med', hard:'diff-hard'}[r.diff];
+    const diffLabel = {easy:'Fácil', med:'Médio', hard:'Difícil'}[r.diff];
+
+    const card = document.createElement('div');
+    card.className = 'food-card' + (done ? ' learned' : '');
+    card.id = 'fc-' + r.id;
+    card.innerHTML = `
+      <div class="food-header" onclick="toggleFood('${r.id}')">
+        <div class="food-emoji">${r.emoji}</div>
+        <div class="food-info">
+          <div class="food-name">${r.name}</div>
+          <div class="food-meta">
+            <span class="food-tag ${diffClass}">${diffLabel}</span>
+            <span class="food-tag time">⏱ ${r.time}</span>
+            ${done ? '<span class="food-tag diff-easy">✓ APRENDI</span>' : ''}
+          </div>
+        </div>
+        <div class="food-check ${done ? 'done' : ''}" onclick="event.stopPropagation();toggleFoodDone('${r.id}')">${done ? '✓' : ''}</div>
+      </div>
+      <div class="food-body" id="fb-${r.id}">
+        <div class="food-portions">
+          <button class="food-portion-btn ${p===1?'active':''}" onclick="setFoodPortion('${r.id}',1)">👤 1 pessoa</button>
+          <button class="food-portion-btn ${p===2?'active':''}" onclick="setFoodPortion('${r.id}',2)">👥 2 pessoas</button>
+        </div>
+        <div class="food-ingredients">
+          <div class="food-ing-title">Ingredientes</div>
+          ${ings.map(i => `<div class="food-ing-item"><span class="food-ing-name">${i.n}</span><span class="food-ing-qty">${i.q}</span></div>`).join('')}
+        </div>
+        <div class="food-steps-title">Modo de fazer</div>
+        ${r.steps.map((s,i) => `<div class="food-step"><span class="food-step-n">${i+1}.</span><span class="food-step-txt">${s}</span></div>`).join('')}
+      </div>`;
+    list.appendChild(card);
+  });
+}
+
+function toggleFood(id) {
+  const body = document.getElementById('fb-' + id);
+  if (!body) return;
+  body.classList.toggle('open');
+}
+
+function setFoodPortion(id, p) {
+  foodPortions[id] = p;
+  renderFood();
+  // reabrir o card
+  setTimeout(() => {
+    const body = document.getElementById('fb-' + id);
+    if (body) body.classList.add('open');
+  }, 10);
+}
+
+function toggleFoodDone(id) {
+  initFoodState();
+  state.food[id] = !state.food[id];
+  save();
+  renderFood();
+  const r = RECIPES.find(x => x.id === id);
+  notif(state.food[id] ? `[ APRENDI ] ${r.name} dominada!` : `[ REABERTO ] ${r.name}`);
+}
+
+// ═══════════════════════════════════════════════════════════
+// GUGAY
+// ═══════════════════════════════════════════════════════════
+let gugayPinBuffer = '';
+let gugayUnlocked = false;
+let gugayViewMonth = new Date().getMonth();
+let gugayViewYear = new Date().getFullYear();
+
+function gugayPinKey(d) {
+  if (gugayPinBuffer.length >= 4) return;
+  gugayPinBuffer += d;
+  updateGugayPinDots(false);
+  if (gugayPinBuffer.length === 4) {
+    setTimeout(() => {
+      if (gugayPinBuffer === PIN) {
+        gugayUnlocked = true;
+        document.getElementById('gugay-locked').classList.add('unlocked');
+        document.getElementById('gugay-content').classList.add('unlocked');
+        renderGugay();
+        notif('[ GUGAY ] Acesso liberado.');
+      } else {
+        updateGugayPinDots(true);
+        setTimeout(() => { gugayPinBuffer = ''; updateGugayPinDots(false); }, 700);
+        return;
+      }
+      gugayPinBuffer = '';
+    }, 150);
+  }
+}
+function gugayPinDel() { if (gugayPinBuffer.length > 0) { gugayPinBuffer = gugayPinBuffer.slice(0,-1); updateGugayPinDots(false); } }
+function updateGugayPinDots(isError) {
+  for (let i = 0; i < 4; i++) {
+    const d = document.getElementById('gd' + i);
+    if (!d) continue;
+    d.classList.remove('filled','error');
+    if (isError) d.classList.add('error');
+    else if (i < gugayPinBuffer.length) d.classList.add('filled');
+  }
+}
+function lockGugay() {
+  gugayUnlocked = false; gugayPinBuffer = ''; updateGugayPinDots(false);
+  document.getElementById('gugay-locked').classList.remove('unlocked');
+  document.getElementById('gugay-content').classList.remove('unlocked');
+}
+
+function gugayChangeMonth(delta) {
+  gugayViewMonth += delta;
+  if (gugayViewMonth > 11) { gugayViewMonth = 0; gugayViewYear++; }
+  if (gugayViewMonth < 0) { gugayViewMonth = 11; gugayViewYear--; }
+  renderGugay();
+}
+
+function gugayAddCorre() {
+  const dataVal = document.getElementById('g-data').value;
+  const gramasVal = parseFloat(document.getElementById('g-gramas-input').value);
+  const valorVal = parseFloat(document.getElementById('g-valor').value);
+  if (!dataVal || isNaN(gramasVal) || isNaN(valorVal) || gramasVal <= 0 || valorVal <= 0) {
+    notif('[ GUGAY ] Preencha data, gramas e valor.');
+    return;
+  }
+  if (!state.gugay) state.gugay = [];
+  state.gugay.push({ data: dataVal, gramas: gramasVal, valor: valorVal });
+  state.gugay.sort((a,b) => a.data.localeCompare(b.data));
+  save();
+  renderGugay();
+  // set view month to the added corre month
+  const d = new Date(dataVal + 'T12:00:00');
+  gugayViewMonth = d.getMonth();
+  gugayViewYear = d.getFullYear();
+  renderGugay();
+  document.getElementById('g-gramas-input').value = '';
+  document.getElementById('g-valor').value = '';
+  notif('[ GUGAY ] Corre registrado!');
+}
+
+function renderGugay() {
+  if (!state.gugay) state.gugay = [];
+  const months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const label = document.getElementById('gugay-month-label');
+  if (label) label.textContent = months[gugayViewMonth] + ' ' + gugayViewYear;
+
+  // filter this month
+  const corres = state.gugay.filter(c => {
+    const d = new Date(c.data + 'T12:00:00');
+    return d.getMonth() === gugayViewMonth && d.getFullYear() === gugayViewYear;
+  });
+
+  const totalG = corres.reduce((a,c) => a + c.gramas, 0);
+  const totalR = corres.reduce((a,c) => a + c.valor, 0);
+  const pgrama = totalG > 0 ? (totalR / totalG).toFixed(2) : null;
+
+  const el = (id) => document.getElementById(id);
+  if(el('g-corres')) el('g-corres').textContent = corres.length;
+  if(el('g-gramas')) el('g-gramas').textContent = totalG.toFixed(1) + 'g';
+  if(el('g-gasto')) el('g-gasto').textContent = 'R$' + totalR.toFixed(0);
+  if(el('g-pgrama')) el('g-pgrama').textContent = pgrama ? 'R$' + pgrama : '—';
+
+  // set today's date as default in input if not set
+  const dataInput = document.getElementById('g-data');
+  if (dataInput && !dataInput.value) dataInput.value = new Date().toISOString().split('T')[0];
+
+  // CALENDAR
+  const calEl = document.getElementById('gugay-cal-days');
+  if (calEl) {
+    const daysInMonth = new Date(gugayViewYear, gugayViewMonth + 1, 0).getDate();
+    const firstDay = new Date(gugayViewYear, gugayViewMonth, 1).getDay();
+    const today = new Date();
+    const correDates = new Set(corres.map(c => c.data));
+
+    let html = '';
+    for (let i = 0; i < firstDay; i++) html += '<div class="gugay-cal-day empty"></div>';
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateStr = gugayViewYear + '-' + String(gugayViewMonth+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+      const isToday = today.getDate() === d && today.getMonth() === gugayViewMonth && today.getFullYear() === gugayViewYear;
+      const hasCorre = correDates.has(dateStr);
+      let cls = 'gugay-cal-day';
+      if (hasCorre) cls += ' has-corre';
+      if (isToday) cls += ' today';
+      html += `<div class="${cls}">${d}</div>`;
+    }
+    calEl.innerHTML = html;
+  }
+
+  // HISTÓRICO
+  const hist = document.getElementById('gugay-hist');
+  if (hist) {
+    if (!corres.length) {
+      hist.innerHTML = '<div style="font-family:var(--mono);font-size:9px;color:var(--muted);text-align:center;padding:12px;">nenhum corre este mês</div>';
+    } else {
+      hist.innerHTML = [...corres].reverse().map(c => {
+        const d = new Date(c.data + 'T12:00:00');
+        const fmt = d.toLocaleDateString('pt-BR', {day:'2-digit',month:'2-digit'});
+        const pgStr = 'R$' + (c.valor / c.gramas).toFixed(2) + '/g';
+        return `<div class="gugay-corre-item">
+          <div class="gugay-corre-date">${fmt}</div>
+          <div class="gugay-corre-details">
+            <span class="gugay-corre-g">${c.gramas}g</span>
+            <span class="gugay-corre-r">R$${c.valor}</span>
+            <span style="font-family:var(--mono);font-size:8px;color:var(--muted);">${pgStr}</span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+}
 // ═══════════════════════════════════════════════════════════
 load();
 renderDate();
@@ -1667,6 +2186,7 @@ renderMedia('games');
 renderMedia('series');
 renderTravelList();
 renderCountdown();
+renderFood();
 fetchClima();
 fetchMacro();
 setTimeout(initGlobe, 100);
